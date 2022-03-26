@@ -1,40 +1,149 @@
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title> My Birthday Countdown</title>
-        <link rel="stylesheet" src="main.css">
-        <script src="main.js"></script>
-    </head>
-    <body>
-     <h1>
-        My birthday Countdown
-        
-    </h1>
-    <div class="sea">
-       <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br />
-    <br />
-    <br/><div id="time"></div>
-    <div id="w1"></div>
-    <div id="w2"></div>
-    <div id="w3"></div>
-    <div id="w4"></div>
-    </div>
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+<link href="https://fonts.googleapis.com/css?family=Anton|Modak|Suez+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
+<style> 
+body{ 
+    text-align: center; 
+    background: #000;  
+  font-weight: 100; 
+} 
+h1{ 
+  color: Pink; 
+  font-weight: 100; 
+  font-size: 40px; 
+  margin: 40px 0px 20px; 
+  animation: anime 2.5s infinite normal;
+  font-family: 'Modak', Aharoni, serif;
+  font-size: 60px;
+} 
+#text{                                          /*The orange text below*/
+        width:400px;
+    
+    height:400px;
+    
+    position:absolute;
+    
+    top:125%;
+    
+    left:50%;
+    
+    transform:translate(-50%,-50%);
+    
+    
+    color: Tomato;
+    font-size: 25px;
+    font-family: 'Stylish', sans-serif;
+}
+ #clockdiv{ 
+    font-family: sans-serif; 
+    color: #fff; 
+    display: inline-block; 
+    font-weight: 100; 
+    text-align: center; 
+    font-size: 30px; 
+} 
+#clockdiv > div{                            /*The blocks*/
+    padding: 10px; 
+    border-radius: 5px; 
+    background: DarkGrey; 
+    display: inline-block; 
+} 
+#clockdiv div > span{                       /*The digits*/
+    padding: 15px; 
+    border-radius: 6px; 
+    background: #000; 
+    display: inline-block; 
+    font-family: 'Anton', Times, sans-serif;
+} 
+alltext{                                    /*The writings on the clocks*/
+    padding-top: 5px; 
+    font-size: 19px; 
+} 
+#end{
+    width:400px;
+    
+    height:400px;
+    
+    position:absolute;
+    
+    top:125%;
+    
+    left:50%;
+    
+    transform:translate(-50%,-50%);
+    
+    
+    color: Tomato;
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'Stylish', sans-serif;
+}
+@keyframes anime {
+    0% {color: Pink;}
+    10% {color: LightBrown; }
+    15% {color: Red;}
+    25% {color: Orange;}
+    50% {color: Yellow;}
+    65% {color: Green;}
+    80% {color: LightBlue;}
+    90% {color: Violet;}
+    100% {color: Pink;}
+}
+</style> 
+</head> 
+<body> 
+<h1>Countdown Clock</h1> 
+<div id="clockdiv"> 
+  <div> 
+    <span class="days" id="day"></span> 
+    <div class="alltext"><strong>Days</strong></div> 
+  </div> 
+  <div> 
+    <span class="hours" id="hour"></span> 
+    <div class="alltext"><strong>Hours</strong></div> 
+  </div> 
+  <div> 
+    <span class="minutes" id="minute"></span> 
+    <div class="alltext"><strong>Minutes</strong></div> 
+  </div> 
+  <div> 
+    <span class="seconds" id="second"></span> 
+    <div class="alltext"><strong>Seconds</strong></div> 
+  </div> 
+</div> 
+  
+<p id="end"></p> 
+<p id="text"><br><br><br><br><strong>COUNTING DOWN TO MY BIRTHDAY !! <br><br> DONT FORGET TO WISH ME🤭😆 ;-)</strong></p>
 
+  
+<script> 
 
+  var deadline = new Date("may 2, 2022 12:00:00").getTime(); 
+  
+var x = setInterval(function() { 
+  
+var now = new Date().getTime(); 
+var t = deadline - now; 
+var days = Math.floor(t / (1000 * 60 * 60 * 24)); 
+var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
+var seconds = Math.floor((t % (1000 * 60)) / 1000); 
+document.getElementById("day").innerHTML =days ; 
+document.getElementById("hour").innerHTML =hours; 
+document.getElementById("minute").innerHTML = minutes;  
+document.getElementById("second").innerHTML =seconds;  
+if (t < 0) { 
+        clearInterval(x); 
+        document.getElementById("end").innerHTML = "AND MY BIRTHDAY IS HERE !! XD"; 
+        document.getElementById("day").innerHTML ='0'; 
+        document.getElementById("hour").innerHTML ='0'; 
+        document.getElementById("minute").innerHTML ='0' ;  
+        document.getElementById("second").innerHTML = '0'; } 
+}, 1000); 
 
- <footer align="center">
-<p><small>_AASTHA_<br/>
-
-</small>
-</p>
-</footer>    
-
-
-    </body>
-</html>
+</script> 
+</body> 
+</html> 
